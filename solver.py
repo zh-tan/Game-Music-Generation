@@ -86,7 +86,7 @@ class Solver(object):
         for image, label in self.test_loader:
 
             # [batch_size, channel, height, width]
-            image = Variable(image.cuda(async=True), volatile=True)
+            image = Variable(image.cuda(), volatile=True)
 
             # [batch_size, channel, height, width, 256]
             logit = self.net(image).contiguous()
